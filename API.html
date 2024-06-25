@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>JS Functions</title>
+    <style>
+      h2 {
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Ajax</h1>
+    <img
+      src="https://paper-attachments.dropbox.com/s_A95344764D52AA21419095E524C2218D68BF719E44B29F7D8A2A3E2647B9B8AF_1560193261406_image.png"
+      alt="API"
+    />
+
+    <script>
+      function displayUsername(response) {
+        let h1 = document.querySelector("h1");
+        h1.innerHTML = `Hey ${response.data.username}`;
+
+
+        /*
+     function displayUsername(response) {
+        response.data.forEach(user => {
+          console.log(user.username);
+        });
+      }
+        */
+      }
+
+      //Whenever you have the rsults of the api url then call dipslayusername to
+      //
+      let apiUrl = "https://jsonplaceholder.typicode.com/users/1";
+      axios.get(apiUrl).then(displayUsername);
+    </script>
+  </body>
+</html>
